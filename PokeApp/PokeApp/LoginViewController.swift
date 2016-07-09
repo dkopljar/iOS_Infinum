@@ -16,9 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        loadingNotification.mode = MBProgressHUDMode.Indeterminate
-        loadingNotification.labelText = "Loading"
+        
 
         // Do any additional setup after loading the view.
     }
@@ -29,8 +27,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonHandler(sender: AnyObject) {
-        print("Username: "+usernameTextField.text!)
-        print("Password: "+passwordTextField.text!)
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading"
+        performSelector(#selector(LoginViewController.hideLoadingHUD), withObject: nil, afterDelay: 3.0)
+        
+       
+    }
+    
+    func hideLoadingHUD(){
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
+        self.navigationController?.pushViewController(homeVC!, animated: true)
     }
 
     @IBAction func SignUpHandler(sender: AnyObject) {

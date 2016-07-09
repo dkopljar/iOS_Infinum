@@ -137,6 +137,24 @@
             </objects>
             <point key="canvasLocation" x="1033" y="341"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="C2i-XP-9x5">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="j10-jx-XHj" customClass="HomeViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZVl-aT-T3m"/>
+                        <viewControllerLayoutGuide type="bottom" id="01N-mR-Dw1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xsm-Gg-gOg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKH-nE-3Qm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061" y="225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="PokeBall" width="151" height="151"/>
