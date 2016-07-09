@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5D620DBF80CB08175325BA1 /* Pods_PokeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8858327D17CDD33FB7B953D1 /* Pods_PokeApp.framework */; };
 		D793ADC41D30147D00789D32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793ADC31D30147D00789D32 /* AppDelegate.swift */; };
 		D793ADC61D30147D00789D32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793ADC51D30147D00789D32 /* ViewController.swift */; };
 		D793ADC91D30147D00789D32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D793ADC71D30147D00789D32 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EB1F260D4F8610E8DE052DC /* Pods-PokeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeApp/Pods-PokeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		78C9F40E7AC2FB39EE455D48 /* Pods-PokeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeApp/Pods-PokeApp.release.xcconfig"; sourceTree = "<group>"; };
+		8858327D17CDD33FB7B953D1 /* Pods_PokeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793ADC01D30147D00789D32 /* PokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793ADC31D30147D00789D32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D793ADC51D30147D00789D32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D620DBF80CB08175325BA1 /* Pods_PokeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634BCB53AE619117A9F222D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8858327D17CDD33FB7B953D1 /* Pods_PokeApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94EDC910BBE9EB23444D0033 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EB1F260D4F8610E8DE052DC /* Pods-PokeApp.debug.xcconfig */,
+				78C9F40E7AC2FB39EE455D48 /* Pods-PokeApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D793ADB71D30147D00789D32 = {
 			isa = PBXGroup;
 			children = (
 				D793ADC21D30147D00789D32 /* PokeApp */,
 				D793ADC11D30147D00789D32 /* Products */,
+				94EDC910BBE9EB23444D0033 /* Pods */,
+				634BCB53AE619117A9F222D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D793ADD21D30147D00789D32 /* Build configuration list for PBXNativeTarget "PokeApp" */;
 			buildPhases = (
+				72748DFF2A9B1F91AE1A9EF3 /* [CP] Check Pods Manifest.lock */,
 				D793ADBC1D30147D00789D32 /* Sources */,
 				D793ADBD1D30147D00789D32 /* Frameworks */,
 				D793ADBE1D30147D00789D32 /* Resources */,
+				78C3DD4C00485FDA157511E6 /* [CP] Embed Pods Frameworks */,
+				0B238B6F6AFE24DB0AE59367 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B238B6F6AFE24DB0AE59367 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeApp/Pods-PokeApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72748DFF2A9B1F91AE1A9EF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78C3DD4C00485FDA157511E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeApp/Pods-PokeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D793ADBC1D30147D00789D32 /* Sources */ = {
@@ -255,6 +330,7 @@
 		};
 		D793ADD31D30147D00789D32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB1F260D4F8610E8DE052DC /* Pods-PokeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PokeApp/Info.plist;
@@ -266,6 +342,7 @@
 		};
 		D793ADD41D30147D00789D32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78C9F40E7AC2FB39EE455D48 /* Pods-PokeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PokeApp/Info.plist;

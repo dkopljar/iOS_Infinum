@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MBProgressHUD
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -16,6 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading"
 
         // Do any additional setup after loading the view.
     }
