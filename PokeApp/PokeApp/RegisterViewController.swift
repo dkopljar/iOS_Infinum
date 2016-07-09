@@ -1,19 +1,15 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  PokeApp
 //
-//  Created by Damir Kopljar on 7/8/16.
+//  Created by Damir Kopljar on 7/9/16.
 //  Copyright © 2016 Damir Kopljar. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,16 +21,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func loginButtonHandler(sender: AnyObject) {
-        print("Username: "+usernameTextField.text!)
-        print("Password: "+passwordTextField.text!)
-    }
 
-    @IBAction func SignUpHandler(sender: AnyObject) {
-        let regVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterViewController") as? RegisterViewController
-        self.navigationController?.pushViewController(regVC!, animated: true)
-    }
-    
     /*
     // MARK: - Navigation
 

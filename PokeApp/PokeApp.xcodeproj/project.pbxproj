@@ -13,6 +13,7 @@
 		D793ADCE1D30147D00789D32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D793ADCC1D30147D00789D32 /* LaunchScreen.storyboard */; };
 		D793ADD61D3014B200789D32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793ADD51D3014B200789D32 /* LoginViewController.swift */; };
 		D7B1CDF51D319B410015471C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B1CDF41D319B410015471C /* Assets.xcassets */; };
+		D7B1CDF71D31A5960015471C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B1CDF61D31A5960015471C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D793ADCF1D30147D00789D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D793ADD51D3014B200789D32 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7B1CDF41D319B410015471C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7B1CDF61D31A5960015471C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D793ADCC1D30147D00789D32 /* LaunchScreen.storyboard */,
 				D793ADCF1D30147D00789D32 /* Info.plist */,
 				D793ADD51D3014B200789D32 /* LoginViewController.swift */,
+				D7B1CDF61D31A5960015471C /* RegisterViewController.swift */,
 			);
 			path = PokeApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				D793ADD61D3014B200789D32 /* LoginViewController.swift in Sources */,
 				D793ADC61D30147D00789D32 /* ViewController.swift in Sources */,
 				D793ADC41D30147D00789D32 /* AppDelegate.swift in Sources */,
+				D7B1CDF71D31A5960015471C /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
