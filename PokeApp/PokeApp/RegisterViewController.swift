@@ -95,7 +95,7 @@ class RegisterViewController: UIViewController {
             alert.addAction(okAction)
             presentViewController(alert, animated: true, completion: nil)
             return false
-        }else if !isValidEmail(emailTextField.text!){
+        }else if !Util.isValidEmail(emailTextField.text!){
             let alert = UIAlertController(title: "Error!", message: "Invalid email!", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
             alert.addAction(okAction)
@@ -106,13 +106,7 @@ class RegisterViewController: UIViewController {
         }
     }
 
-    func isValidEmail(testStr:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(testStr)
-    }
-
     /*
     // MARK: - Navigation
 
