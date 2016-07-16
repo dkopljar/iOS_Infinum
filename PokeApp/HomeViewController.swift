@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView!.tableFooterView = UIView(frame: CGRect.zero)
+        tableView!.tableFooterView?.hidden = true
         let headers = [
             "Authorization": " Token token=\(userData.authToken), email=\(userData.email)"]
         
