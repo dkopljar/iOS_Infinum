@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeNavigationButton()
         tableView!.tableFooterView = UIView(frame: CGRect.zero)
         tableView!.tableFooterView?.hidden = true
         let headers = [
@@ -56,6 +57,21 @@ class HomeViewController: UIViewController {
         
     }
     
+    func changeNavigationButton(){
+        let btnName = UIButton()
+        btnName.setImage(UIImage(named: "icon_logout"), forState: .Normal)
+        btnName.frame = CGRectMake(0, 0, 30, 30)
+        btnName.addTarget(self, action: #selector(HomeViewController.goToLogin), forControlEvents: .TouchUpInside)
+        
+        //.... Set Right/Left Bar Button item
+        let leftBarButton = UIBarButtonItem()
+        leftBarButton.customView = btnName
+        self.navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    func goToLogin(){
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
