@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,30 +34,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mg-AU-sdg">
-                                <rect key="frame" x="276" y="440" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mg-AU-sdg">
+                                <rect key="frame" x="0.0" y="497" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.23137254901960785" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ixb-tR-If0"/>
+                                </constraints>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="submitButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atV-dQ-pm9"/>
+                                    <action selector="loginButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eko-hX-y3V"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-cc-rXJ">
-                                <rect key="frame" x="199" y="309" width="203" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIX-uE-CX2">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SSt-Xp-bqm"/>
+                                </constraints>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="0.10980392156862745" green="0.16470588235294117" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignUpHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sR1-Rx-ULz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-cc-rXJ">
+                                <rect key="frame" x="20" y="390" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zZ-oM-bX7">
-                                <rect key="frame" x="199" y="378" width="203" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PokeTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-zV-8PT">
+                                <rect key="frame" x="180" y="74" width="240" height="100"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zZ-oM-bX7">
+                                <rect key="frame" x="20" y="434" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PokeBall" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-gm-RNg">
+                                <rect key="frame" x="225" y="176" width="151" height="151"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bbk-cc-rXJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6Dy-ad-Z0O"/>
+                            <constraint firstItem="bbk-cc-rXJ" firstAttribute="centerX" secondItem="7sF-zV-8PT" secondAttribute="centerX" id="8CL-Mv-eUV"/>
+                            <constraint firstItem="LIX-uE-CX2" firstAttribute="top" secondItem="2Mg-AU-sdg" secondAttribute="bottom" constant="3" id="DbG-Nn-fIQ"/>
+                            <constraint firstItem="2zZ-oM-bX7" firstAttribute="centerX" secondItem="7sF-zV-8PT" secondAttribute="centerX" id="Gg9-hP-f3N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LIX-uE-CX2" secondAttribute="trailing" constant="-20" id="Ghu-ic-1AQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LIX-uE-CX2" secondAttribute="bottom" id="Jqq-0B-dSm"/>
+                            <constraint firstItem="2Mg-AU-sdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Kmq-Ek-DIY"/>
+                            <constraint firstItem="2Mg-AU-sdg" firstAttribute="top" secondItem="2zZ-oM-bX7" secondAttribute="bottom" constant="33" id="Lmx-Sc-TbE"/>
+                            <constraint firstItem="2zZ-oM-bX7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TGB-7H-llx"/>
+                            <constraint firstItem="8Ka-gm-RNg" firstAttribute="centerX" secondItem="7sF-zV-8PT" secondAttribute="centerX" id="U9P-NU-0nZ"/>
+                            <constraint firstItem="LIX-uE-CX2" firstAttribute="centerX" secondItem="7sF-zV-8PT" secondAttribute="centerX" id="Ufn-dq-puX"/>
+                            <constraint firstItem="2Mg-AU-sdg" firstAttribute="centerX" secondItem="7sF-zV-8PT" secondAttribute="centerX" id="X0p-Ef-lE8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Mg-AU-sdg" secondAttribute="trailing" constant="-20" id="Xmd-Tq-nIY"/>
+                            <constraint firstItem="2zZ-oM-bX7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fvt-Py-P3V"/>
+                            <constraint firstItem="7sF-zV-8PT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="lL7-bR-eTg"/>
+                            <constraint firstItem="LIX-uE-CX2" firstAttribute="top" secondItem="2Mg-AU-sdg" secondAttribute="bottom" constant="3" id="mtk-8w-avn"/>
+                            <constraint firstItem="2zZ-oM-bX7" firstAttribute="top" secondItem="bbk-cc-rXJ" secondAttribute="bottom" constant="14" id="rGR-m9-uQa"/>
+                            <constraint firstItem="8Ka-gm-RNg" firstAttribute="top" secondItem="7sF-zV-8PT" secondAttribute="bottom" constant="5" id="s0n-GT-fyg"/>
+                            <constraint firstItem="LIX-uE-CX2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ysE-ax-Dmj"/>
+                            <constraint firstItem="bbk-cc-rXJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zhe-ss-AgX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K3v-Pk-s8y"/>
                     <connections>
+                        <outlet property="loginButton" destination="2Mg-AU-sdg" id="Sac-Rc-77t"/>
                         <outlet property="passwordTextField" destination="2zZ-oM-bX7" id="cVI-kC-cw6"/>
-                        <outlet property="submitButton" destination="2Mg-AU-sdg" id="bM2-Yt-l85"/>
+                        <outlet property="signUpButton" destination="LIX-uE-CX2" id="MSC-QO-7p0"/>
                         <outlet property="usernameTextField" destination="bbk-cc-rXJ" id="bKS-3m-8vq"/>
                     </connections>
                 </viewController>
@@ -64,5 +113,57 @@
             </objects>
             <point key="canvasLocation" x="305" y="355"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="Pp7-ze-N1q">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" id="t0E-wS-fwJ" customClass="RegisterViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="esY-vi-tOH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ybs-ar-mUO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8QC-4j-cb6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3og-b7-8hj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="341"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="C2i-XP-9x5">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="j10-jx-XHj" customClass="HomeViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZVl-aT-T3m"/>
+                        <viewControllerLayoutGuide type="bottom" id="01N-mR-Dw1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xsm-Gg-gOg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-0U-scO">
+                                <rect key="frame" x="97" y="148" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nd6-0U-scO" firstAttribute="top" secondItem="ZVl-aT-T3m" secondAttribute="bottom" constant="128" id="eSn-Js-pvw"/>
+                            <constraint firstItem="nd6-0U-scO" firstAttribute="leading" secondItem="Xsm-Gg-gOg" secondAttribute="leadingMargin" constant="77" id="hqS-wY-96O"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKH-nE-3Qm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061" y="225"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="PokeBall" width="151" height="151"/>
+        <image name="PokeTitle" width="240" height="100"/>
+    </resources>
 </document>
