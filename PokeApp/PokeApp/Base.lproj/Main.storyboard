@@ -75,7 +75,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zZ-oM-bX7">
                                 <rect key="frame" x="20" y="434" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PokeBall" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-gm-RNg">
                                 <rect key="frame" x="225" y="135" width="151" height="151"/>
@@ -109,10 +109,10 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="emailTextField" destination="bbk-cc-rXJ" id="Bos-D0-of0"/>
                         <outlet property="loginButton" destination="2Mg-AU-sdg" id="Sac-Rc-77t"/>
                         <outlet property="passwordTextField" destination="2zZ-oM-bX7" id="cVI-kC-cw6"/>
                         <outlet property="signUpButton" destination="LIX-uE-CX2" id="MSC-QO-7p0"/>
-                        <outlet property="usernameTextField" destination="bbk-cc-rXJ" id="bKS-3m-8vq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -172,7 +172,7 @@
                                     <constraint firstAttribute="height" constant="50" id="DHA-cb-UTM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ArH-if-nJ8">
                                 <rect key="frame" x="40" y="215" width="540" height="50"/>
@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="50" id="j8c-TM-sBe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_person" translatesAutoresizingMaskIntoConstraints="NO" id="Rnh-oN-blM">
                                 <rect key="frame" x="16" y="102" width="16" height="16"/>
