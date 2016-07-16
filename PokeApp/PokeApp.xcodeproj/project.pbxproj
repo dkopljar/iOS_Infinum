@@ -17,6 +17,7 @@
 		D793ADD61D3014B200789D32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793ADD51D3014B200789D32 /* LoginViewController.swift */; };
 		D7B1CDF51D319B410015471C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B1CDF41D319B410015471C /* Assets.xcassets */; };
 		D7B1CDF71D31A5960015471C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B1CDF61D31A5960015471C /* RegisterViewController.swift */; };
+		D7BC16401D3AD90B0079E960 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC163F1D3AD90B0079E960 /* PokemonResponse.swift */; };
 		D7FE77E11D3AB501008B602D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FE77E01D3AB501008B602D /* Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		D793ADD51D3014B200789D32 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7B1CDF41D319B410015471C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7B1CDF61D31A5960015471C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D7BC163F1D3AD90B0079E960 /* PokemonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
 		D7FE77E01D3AB501008B602D /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				D72D0BFD1D3A9B7700D6FF32 /* User.swift */,
+				D7BC163F1D3AD90B0079E960 /* PokemonResponse.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				D72D0BFE1D3A9B7700D6FF32 /* User.swift in Sources */,
 				D793ADC61D30147D00789D32 /* ViewController.swift in Sources */,
 				D7FE77E11D3AB501008B602D /* Util.swift in Sources */,
+				D7BC16401D3AD90B0079E960 /* PokemonResponse.swift in Sources */,
 				D793ADC41D30147D00789D32 /* AppDelegate.swift in Sources */,
 				D7B1CDF71D31A5960015471C /* RegisterViewController.swift in Sources */,
 			);
