@@ -70,7 +70,31 @@ class HomeViewController: UIViewController {
     }
     
     func goToLogin(){
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        let headers = [
+            "Authorization": " Token token=\(userData.authToken), email=\(userData.email)"]
+        Alamofire.request(.DELETE, "https://pokeapi.infinum.co/api/v1/users/logout", encoding: .JSON, headers:headers).validate().responseJSON { (response) in
+            switch response.result {
+            case .Success:
+                SVProgressHUD.showSuccessWithStatus("Logged out")
+                
+                if response.data != nil {
+                    do {
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    }
+                } else {
+                    let alert = UIAlertController(title: "Sorry!", message: "Please try again later", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                    alert.addAction(okAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+            case .Failure(let error):
+                SVProgressHUD.showErrorWithStatus("\(error.localizedDescription)")
+            }
+        }
+        
+    
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
