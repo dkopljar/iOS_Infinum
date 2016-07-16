@@ -7,4 +7,7 @@ target 'PokeApp' do
 
   # Pods for PokeApp
   pod 'MBProgressHUD', '~> 0.9'
+  pod 'Alamofire'
+  pod 'Unbox'
+  pod 'SVProgressHUD'
 end
