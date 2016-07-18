@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
         Alamofire.request(.GET, "https://pokeapi.infinum.co/api/v1/pokemons", encoding: .JSON, headers:headers).validate().responseJSON { (response) in
             switch response.result {
             case .Success:
-                SVProgressHUD.showSuccessWithStatus("")
-                
+                //SVProgressHUD.showSuccessWithStatus("")
+                SVProgressHUD.dismiss()
                 if let data = response.data {
                     do {
                         let pokeResponseData: PokemonResponse = try Unbox(data)
