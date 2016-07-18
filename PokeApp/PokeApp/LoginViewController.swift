@@ -96,6 +96,10 @@ class LoginViewController: UIViewController {
             return true
         }
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
     /*
     // MARK: - Navigation
 
