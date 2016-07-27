@@ -7,29 +7,137 @@
 //
 
 import UIKit
+import Alamofire
+import SVProgressHUD
+import Unbox
+
 
 class HomeViewController: UIViewController {
-
+    var userData: User!
+    var pokeResponse: PokemonResponse!
+    @IBOutlet weak var tableView: UITableView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        changeNavigationButton()
+        tableView!.tableFooterView = UIView(frame: CGRect.zero)
+        tableView!.tableFooterView?.hidden = true
+        let headers = [
+            "Authorization": " Token token=\(userData.authToken), email=\(userData.email)"]
+        
+        SVProgressHUD.show()
+        Alamofire.request(.GET, "https://pokeapi.infinum.co/api/v1/pokemons", encoding: .JSON, headers:headers).validate().responseJSON { (response) in
+            switch response.result {
+            case .Success:
+                //SVProgressHUD.showSuccessWithStatus("")
+                SVProgressHUD.dismiss()
+                if let data = response.data {
+                    do {
+                        let pokeResponseData: PokemonResponse = try Unbox(data)
+                        self.pokeResponse = pokeResponseData
+                        self.tableView?.reloadData()
+                    } catch _ {
+                        let alert = UIAlertController(title: "Sorry!", message: "Please try again later!", preferredStyle: .Alert)
+                        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                        alert.addAction(okAction)
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                } else {
+                    let alert = UIAlertController(title: "Sorry!", message: "Please try again later", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                    alert.addAction(okAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+            case .Failure(let error):
+                SVProgressHUD.showErrorWithStatus("\(error.localizedDescription)")
+            }
+        }
+        
     }
-
+    
+    func changeNavigationButton(){
+        let btnName = UIButton()
+        btnName.setImage(UIImage(named: "icon_logout"), forState: .Normal)
+        btnName.frame = CGRectMake(0, 0, 30, 30)
+        btnName.addTarget(self, action: #selector(HomeViewController.goToLogin), forControlEvents: .TouchUpInside)
+        
+        //.... Set Right/Left Bar Button item
+        let leftBarButton = UIBarButtonItem()
+        leftBarButton.customView = btnName
+        self.navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    func goToLogin(){
+        let headers = [
+            "Authorization": " Token token=\(userData.authToken), email=\(userData.email)"]
+        Alamofire.request(.DELETE, "https://pokeapi.infinum.co/api/v1/users/logout", encoding: .JSON, headers:headers).validate().responseJSON { (response) in
+            switch response.result {
+            case .Success:
+                SVProgressHUD.showSuccessWithStatus("Logged out")
+                
+                if response.data != nil {
+                    do {
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    }
+                } else {
+                    let alert = UIAlertController(title: "Sorry!", message: "Please try again later", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                    alert.addAction(okAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+            case .Failure(let error):
+                SVProgressHUD.showErrorWithStatus("\(error.localizedDescription)")
+            }
+        }
+        
+    
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // Do any additional setup after loading the view.
 }
+
+
+
+
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.pokeResponse == nil{
+            return 0
+        }else{
+            return self.pokeResponse.pokemons.count
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier") as UITableViewCell!
+        
+        cell.textLabel?.text = pokeResponse.pokemons[indexPath.row].name
+        
+        return cell
+    }
+    
+}
+/**
+ extension HomeViewController: UITableViewDelegate {
+ 
+ func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+ tableView.deselectRowAtIndexPath(indexPath, animated: true)
+ 
+ print(indexPath)
+ }
+ 
+ }**/
